@@ -1,0 +1,18 @@
+net: "models/DRE/net2exp6/train_val.prototxt"
+solver_type: ADAGRAD
+test_iter: 100
+test_interval: 1000
+# lr for fine-tuning should be lower than when starting from scratch
+base_lr: 0.001
+lr_policy: "step"
+gamma: 0.1
+# stepsize should also be lower, as we're closer to being done
+stepsize: 10000
+display: 20
+max_iter: 100000
+#momentum: 0.9
+weight_decay: 0.0005
+snapshot: 1000
+snapshot_prefix: "models/DRE/net2exp6/finexp1"
+# uncomment the following to default to CPU mode solving
+# solver_mode: CPU
